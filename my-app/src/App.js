@@ -73,25 +73,24 @@ class HouseCostCalculator extends Component {
 
 
 
-    // Calculate principal and interest
-    // Calculate the remaining loan amount for each month
-    let remainingLoanAmount = loanAmount;
+// Calculate the remaining loan amount for each month
+let remainingLoanAmount = loanAmount;
 
-    // Initialize variables for principal and interest
-    let Principal = 0;
-    let Interest = 0;
+// Initialize variables for principal and interest
+let Principal = 0;
+let Interest = 0;
 
-    // Calculate principal and interest for each month
-    for (let i = 0; i < (12 * holdingLength); i++) {
-      Interest = remainingLoanAmount * monthlyInterestRate;
-      Principal = mortgageMonthlyPayment - Interest;
+// Calculate principal and interest for each month
+for (let i = 0; i < (12 * holdingLength); i++) {
+  Interest = remainingLoanAmount * monthlyInterestRate;
+  Principal = mortgageMonthlyPayment - Interest;
 
-      remainingLoanAmount -= Principal;
-    }
+  remainingLoanAmount -= Principal;
+}
 
-    // Calculate the total principal and interest paid over the mortgage period
-    Principal *= (12 * holdingLength);
-    Interest *= (12 * holdingLength);
+// Calculate the total principal and interest paid over the mortgage period
+Principal = loanAmount - remainingLoanAmount;
+Interest = mortgageMonthlyPayment * (12 * holdingLength) - Principal;
 
 
 

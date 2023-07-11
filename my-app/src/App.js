@@ -19,7 +19,7 @@ class HouseCostCalculator extends Component {
       mortgageMonthlyPayment: 0,
       otherMonthlyPayment: 0,
       equityMonthlyGain: 0,
-      holdingLength:3,
+      holdingLength: 3,
     };
   }
 
@@ -54,14 +54,16 @@ class HouseCostCalculator extends Component {
         (monthlyInterestRate * Math.pow(1 + monthlyInterestRate, totalMonths))) /
       (Math.pow(1 + monthlyInterestRate, totalMonths) - 1);
 
-      
 
-      const taxPerYear = housePrice * taxPerYearPercentagre / 100;
+
+
+
+    const taxPerYear = housePrice * taxPerYearPercentagre / 100;
 
 
     // Calculate other monthly payment
     const otherMonthlyPayment =
-      (parseFloat(housePrice * taxPerYearPercentagre / 100)/12 +
+      (parseFloat(housePrice * taxPerYearPercentagre / 100) / 12 +
         parseFloat(monthlyInsurance) +
         parseFloat(utilityPerMonth) +
         parseFloat(maintenanceFeesPerMonth));
@@ -71,19 +73,34 @@ class HouseCostCalculator extends Component {
 
 
 
-    const firstThreeYearsPrincipal =
-      (mortgageMonthlyPayment - loanAmount * monthlyInterestRate) * 12 * holdingLength;
+    // Calculate principal and interest
+    // Calculate the remaining loan amount for each month
+    let remainingLoanAmount = loanAmount;
 
-    const firstThreeYearsInterest =
-      mortgageMonthlyPayment * 12 * holdingLength - firstThreeYearsPrincipal;
+    // Initialize variables for principal and interest
+    let Principal = 0;
+    let Interest = 0;
+
+    // Calculate principal and interest for each month
+    for (let i = 0; i < (12 * holdingLength); i++) {
+      Interest = remainingLoanAmount * monthlyInterestRate;
+      Principal = mortgageMonthlyPayment - Interest;
+
+      remainingLoanAmount -= Principal;
+    }
+
+    // Calculate the total principal and interest paid over the mortgage period
+    Principal *= (12 * holdingLength);
+    Interest *= (12 * holdingLength);
 
 
-          // Calculate equity monthly gain
-    const houseSellingCost = sellingCostPercentage * sellingPrice / 100          
-    const equityMonthlyGain = firstThreeYearsPrincipal/(12 * holdingLength) -  parseFloat(buyingCost)/(12 * holdingLength) - parseFloat(sellingCostPercentage * sellingPrice / 100) / (12 * holdingLength)  + (sellingPrice - housePrice)/(12 * holdingLength) ;
+
+    // Calculate equity monthly gain
+    const houseSellingCost = sellingCostPercentage * sellingPrice / 100
+    const equityMonthlyGain = Principal / (12 * holdingLength) - parseFloat(buyingCost) / (12 * holdingLength) - parseFloat(sellingCostPercentage * sellingPrice / 100) / (12 * holdingLength) + (sellingPrice - housePrice) / (12 * holdingLength);
     const realMonthlyPayment = totalMonthlyPayment - equityMonthlyGain;
 
-      
+
 
 
     this.setState({
@@ -91,8 +108,8 @@ class HouseCostCalculator extends Component {
       mortgageMonthlyPayment,
       otherMonthlyPayment,
       equityMonthlyGain,
-      firstThreeYearsPrincipal,
-      firstThreeYearsInterest,
+      Principal,
+      Interest,
       realMonthlyPayment,
       houseSellingCost,
       sellingCostPercentage,
@@ -117,8 +134,8 @@ class HouseCostCalculator extends Component {
       mortgageMonthlyPayment,
       otherMonthlyPayment,
       equityMonthlyGain,
-      firstThreeYearsPrincipal,
-      firstThreeYearsInterest,
+      Principal,
+      Interest,
       realMonthlyPayment,
       sellingCostPercentage,
       taxPerYear,
@@ -258,7 +275,7 @@ class HouseCostCalculator extends Component {
         </div>
         <div>
           <label>House Tax per year/month:</label>
-          <span>{taxPerYear}/{taxPerYear/12}</span>
+          <span>{taxPerYear}/{taxPerYear / 12}</span>
         </div>
         <div>
           <label>House Selling Cost:</label>
@@ -266,11 +283,11 @@ class HouseCostCalculator extends Component {
         </div>
         <div>
           <label>First Three Years Principal:</label>
-          <span>{firstThreeYearsPrincipal}</span>
+          <span>{Principal}</span>
         </div>
         <div>
           <label>First Three Years Interest:</label>
-          <span>{firstThreeYearsInterest}</span>
+          <span>{Interest}</span>
         </div>
       </div>
     );

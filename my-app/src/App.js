@@ -73,24 +73,24 @@ class HouseCostCalculator extends Component {
 
 
 
-// Calculate the remaining loan amount for each month
-let remainingLoanAmount = loanAmount;
+    // Calculate the remaining loan amount for each month
+    let remainingLoanAmount = loanAmount;
 
-// Initialize variables for principal and interest
-let Principal = 0;
-let Interest = 0;
+    // Initialize variables for principal and interest
+    let Principal = 0;
+    let Interest = 0;
 
-// Calculate principal and interest for each month
-for (let i = 0; i < (12 * holdingLength); i++) {
-  Interest = remainingLoanAmount * monthlyInterestRate;
-  Principal = mortgageMonthlyPayment - Interest;
+    // Calculate principal and interest for each month
+    for (let i = 0; i < (12 * holdingLength); i++) {
+      Interest = remainingLoanAmount * monthlyInterestRate;
+      Principal = mortgageMonthlyPayment - Interest;
 
-  remainingLoanAmount -= Principal;
-}
+      remainingLoanAmount -= Principal;
+    }
 
-// Calculate the total principal and interest paid over the mortgage period
-Principal = loanAmount - remainingLoanAmount;
-Interest = mortgageMonthlyPayment * (12 * holdingLength) - Principal;
+    // Calculate the total principal and interest paid over the mortgage period
+    Principal = loanAmount - remainingLoanAmount;
+    Interest = mortgageMonthlyPayment * (12 * holdingLength) - Principal;
 
 
 
@@ -255,39 +255,43 @@ Interest = mortgageMonthlyPayment * (12 * holdingLength) - Principal;
         <div>
           <button onClick={this.calculateHouseCost}>Calculate</button>
         </div>
-        <h2>Results:</h2>
-        <div>
-          <label><b>Total Monthly Payment:</b></label>
-          <span><b>{totalMonthlyPayment}</b></span>
-        </div>
-        <div>
-          <label><b>Real Monthly Payment (Adjusted after sale and Equity Calc):</b></label>
-          <span><b> {realMonthlyPayment}</b></span>
-        </div>
-        <div>
-          <label>Mortgage Monthly Payment:</label>
-          <span>{mortgageMonthlyPayment}</span>
-        </div>
-        <div>
-          <label>Equity Monthly (Considering the Buying cost and selling cost):</label>
-          <span>{equityMonthlyGain}</span>
-        </div>
-        <div>
-          <label>House Tax per year/month:</label>
-          <span>{taxPerYear}/{taxPerYear / 12}</span>
-        </div>
-        <div>
-          <label>House Selling Cost:</label>
-          <span>{houseSellingCost}</span>
-        </div>
-        <div>
-          <label>First Three Years Principal:</label>
-          <span>{Principal}</span>
-        </div>
-        <div>
-          <label>First Three Years Interest:</label>
-          <span>{Interest}</span>
-        </div>
+        <h4>Results:</h4>
+        <table>
+          <tbody>
+            <tr>
+              <td><b>Total Monthly Payment:</b></td>
+              <td><b>{totalMonthlyPayment}</b></td>
+            </tr>
+            <tr>
+              <td><b>Actual Total Monthly Payment (Adjusted after considering selling cost, buying cost, and equity gain):</b></td>
+              <td><b>{realMonthlyPayment}</b></td>
+            </tr>
+            <tr>
+              <td>Mortgage Monthly Payment:</td>
+              <td>{mortgageMonthlyPayment}</td>
+            </tr>
+            <tr>
+              <td>Equity Monthly (Adjusted after considering buying cost and selling cost):</td>
+              <td>{equityMonthlyGain}</td>
+            </tr>
+            <tr>
+              <td>House Tax per year / month:</td>
+              <td>{taxPerYear} / {taxPerYear / 12}</td>
+            </tr>
+            <tr>
+              <td>House Selling Cost:</td>
+              <td>{houseSellingCost}</td>
+            </tr>
+            <tr>
+              <td>First {holdingLength} Years Principal:</td>
+              <td>{Principal}</td>
+            </tr>
+            <tr>
+              <td>First {holdingLength} Years Interest:</td>
+              <td>{Interest}</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     );
   }

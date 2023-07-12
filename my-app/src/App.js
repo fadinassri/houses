@@ -48,17 +48,11 @@ class HouseCostCalculator extends Component {
     const monthlyInterestRate = mortgageRate / 100 / 12;
     const totalMonths = mortgagePeriod * 12;
 
-// Calculate mortgage monthly payment with Bank of Canada compounding
-const compoundingFrequency = 2; // Semi-annual compounding
-
-// Convert annual interest rate to the appropriate periodic rate
-const periodicInterestRate = mortgageRate / (12 * compoundingFrequency);
-
-
-// Calculate the mortgage monthly payment
-const mortgageMonthlyPayment =
-  (loanAmount * periodicInterestRate * Math.pow(1 + periodicInterestRate, totalMonths)) /
-  (Math.pow(1 + periodicInterestRate, totalMonths) - 1);
+    // Calculate mortgage monthly payment
+    const mortgageMonthlyPayment =
+      (loanAmount *
+        (monthlyInterestRate * Math.pow(1 + monthlyInterestRate, totalMonths))) /
+      (Math.pow(1 + monthlyInterestRate, totalMonths) - 1);
 
 
 
@@ -265,8 +259,8 @@ const mortgageMonthlyPayment =
             onChange={this.handleInputChange}
           />
         </div>
-        <div>
-          <button onClick={this.calculateHouseCost}>Calculate</button>
+        <div style={{padding: '10px 20px'}}>
+          <button  style={{ fontSize: '18px', padding: '10px 20px'}}   onClick={this.calculateHouseCost}>Calculate</button>
         </div>
         <h4>Results:</h4>
         <div className="result-table">

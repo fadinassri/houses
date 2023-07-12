@@ -146,6 +146,11 @@ class HouseCostCalculator extends Component {
     return (
       <div className="container" style={{ marginLeft: '5px' }}>
         <h1>House Cost Calculator</h1>
+        <p>
+          This House Cost Calculator provides an estimate of the monthly and overall costs associated with owning a house.
+          It takes into account factors such as mortgage details, taxes, insurance, utilities, and maintenance fees.
+          The calculator helps you understand the financial implications of owning a house over a specified period of time.
+        </p>
         <div>
           <label>House Price:</label><br />
           <input

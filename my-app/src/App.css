@@ -36,3 +36,37 @@
     transform: rotate(360deg);
   }
 }
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Add media query for smaller screens */
+@media (max-width: 480px) {
+  .container {
+    padding: 10px;
+  }
+}
+
+.result-table {
+  overflow-x: auto;
+}
+
+.result-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.result-table th,
+.result-table td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.result-table th {
+  background-color: #f2f2f2;
+}
+

@@ -98,7 +98,7 @@ class HouseCostCalculator extends Component {
     const houseSellingCost = sellingCostPercentage * sellingPrice / 100
     const equityMonthlyGain = Principal / (12 * holdingLength) - parseFloat(buyingCost) / (12 * holdingLength) - parseFloat(sellingCostPercentage * sellingPrice / 100) / (12 * holdingLength) + (sellingPrice - housePrice) / (12 * holdingLength);
     const realMonthlyPayment = totalMonthlyPayment - equityMonthlyGain;
-    const cashGainAfterSell = Principal  - parseFloat(buyingCost) - parseFloat(sellingCostPercentage * sellingPrice / 100)  + (sellingPrice - housePrice);
+    const cashGainAfterSell = Principal - parseFloat(buyingCost) - parseFloat(sellingCostPercentage * sellingPrice / 100) + (sellingPrice - housePrice);
 
 
 
@@ -144,10 +144,10 @@ class HouseCostCalculator extends Component {
     } = this.state;
 
     return (
-      <div>
+      <div className="container" style={{ marginLeft: '5px' }}>
         <h1>House Cost Calculator</h1>
         <div>
-          <label>House Price:</label>
+          <label>House Price:</label><br />
           <input
             type="number"
             name="housePrice"
@@ -156,7 +156,7 @@ class HouseCostCalculator extends Component {
           />
         </div>
         <div>
-          <label>After how many years are you planning to sell this house:</label>
+          <label>After how many years are you planning to sell this house:</label><br />
           <input
             type="number"
             name="holdingLength"
@@ -165,7 +165,7 @@ class HouseCostCalculator extends Component {
           />
         </div>
         <div>
-          <label>Selling Price:</label>
+          <label>Selling Price:</label><br />
           <input
             type="number"
             name="sellingPrice"
@@ -174,7 +174,7 @@ class HouseCostCalculator extends Component {
           />
         </div>
         <div>
-          <label>Down Payment:</label>
+          <label>Down Payment:</label><br />
           <input
             type="number"
             name="downPayment"
@@ -183,7 +183,7 @@ class HouseCostCalculator extends Component {
           />
         </div>
         <div>
-          <label>Mortgage Rate (%):</label>
+          <label>Mortgage Rate (%):</label><br />
           <input
             type="number"
             name="mortgageRate"
@@ -192,7 +192,7 @@ class HouseCostCalculator extends Component {
           />
         </div>
         <div>
-          <label>Mortgage Period (years):</label>
+          <label>Mortgage Period (years):</label><br />
           <input
             type="number"
             name="mortgagePeriod"
@@ -201,7 +201,7 @@ class HouseCostCalculator extends Component {
           />
         </div>
         <div>
-          <label>Tax per Year (Percentage of buying Price %):</label>
+          <label>Tax per Year (Percentage of buying Price %):</label><br />
           <input
             type="number"
             name="taxPerYearPercentagre"
@@ -210,7 +210,7 @@ class HouseCostCalculator extends Component {
           />
         </div>
         <div>
-          <label>Buying Cost:</label>
+          <label>Buying Cost:</label><br />
           <input
             type="number"
             name="buyingCost"
@@ -219,7 +219,7 @@ class HouseCostCalculator extends Component {
           />
         </div>
         <div>
-          <label>Selling Cost Percentage (% of Selling Price):</label>
+          <label>Selling Cost Percentage (% of Selling Price):</label><br />
           <input
             type="number"
             name="sellingCostPercentage"
@@ -228,7 +228,7 @@ class HouseCostCalculator extends Component {
           />
         </div>
         <div>
-          <label>Monthly Insurance:</label>
+          <label>Monthly Insurance:</label><br />
           <input
             type="number"
             name="monthlyInsurance"
@@ -237,7 +237,7 @@ class HouseCostCalculator extends Component {
           />
         </div>
         <div>
-          <label>Utility per Month:</label>
+          <label>Utility per Month:</label><br />
           <input
             type="number"
             name="utilityPerMonth"
@@ -246,7 +246,7 @@ class HouseCostCalculator extends Component {
           />
         </div>
         <div>
-          <label>Maintenance Fees per Month:</label>
+          <label>Maintenance Fees per Month:</label><br />
           <input
             type="number"
             name="maintenanceFeesPerMonth"
@@ -258,46 +258,48 @@ class HouseCostCalculator extends Component {
           <button onClick={this.calculateHouseCost}>Calculate</button>
         </div>
         <h4>Results:</h4>
-        <table>
-          <tbody>
-            <tr>
-              <td><b>Total Monthly Payment:</b></td>
-              <td><b>{totalMonthlyPayment}</b></td>
-            </tr>
-            <tr>
-              <td><b>The cash gain after selling the house and deducting the selling cost and buying cost:</b></td>
-              <td><b>{cashGainAfterSell}</b></td>
-            </tr>
-            <tr>
-              <td><b>Actual Total Monthly Payment (Adjusted after considering selling cost, buying cost, and equity gain):</b></td>
-              <td><b>{realMonthlyPayment}</b></td>
-            </tr>
-            <tr>
-              <td>Mortgage Monthly Payment:</td>
-              <td>{mortgageMonthlyPayment}</td>
-            </tr>
-            <tr>
-              <td>Equity Monthly (Adjusted after considering buying cost and selling cost):</td>
-              <td>{equityMonthlyGain}</td>
-            </tr>
-            <tr>
-              <td>House Tax per year / month:</td>
-              <td>{taxPerYear} / {taxPerYear / 12}</td>
-            </tr>
-            <tr>
-              <td>House Selling Cost:</td>
-              <td>{houseSellingCost}</td>
-            </tr>
-            <tr>
-              <td>First {holdingLength} Years Principal:</td>
-              <td>{Principal}</td>
-            </tr>
-            <tr>
-              <td>First {holdingLength} Years Interest:</td>
-              <td>{Interest}</td>
-            </tr>
-          </tbody>
-        </table>
+        <div className="result-table">
+          <table border={1}>
+            <tbody>
+              <tr>
+                <td><b>Total Monthly Payment:</b></td>
+                <td><b>{totalMonthlyPayment}</b></td>
+              </tr>
+              <tr>
+                <td><b>The cash gain after selling the house and deducting the selling cost and buying cost:</b></td>
+                <td><b>{cashGainAfterSell}</b></td>
+              </tr>
+              <tr>
+                <td><b>Actual Total Monthly Payment (Adjusted after considering selling cost, buying cost, and equity gain):</b></td>
+                <td><b>{realMonthlyPayment}</b></td>
+              </tr>
+              <tr>
+                <td>Mortgage Monthly Payment:</td>
+                <td>{mortgageMonthlyPayment}</td>
+              </tr>
+              <tr>
+                <td>Equity Monthly (Adjusted after considering buying cost and selling cost):</td>
+                <td>{equityMonthlyGain}</td>
+              </tr>
+              <tr>
+                <td>House Tax per year / month:</td>
+                <td>{taxPerYear} / {taxPerYear / 12}</td>
+              </tr>
+              <tr>
+                <td>House Selling Cost:</td>
+                <td>{houseSellingCost}</td>
+              </tr>
+              <tr>
+                <td>First {holdingLength} Years Principal:</td>
+                <td>{Principal}</td>
+              </tr>
+              <tr>
+                <td>First {holdingLength} Years Interest:</td>
+                <td>{Interest}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     );
   }

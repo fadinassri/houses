@@ -12,7 +12,7 @@ class HouseCostCalculator extends Component {
       buyingCost: 7000,
       sellingCostPercentage: 5,
       sellingPrice: 350000,
-      monthlyInsurance: 80,
+      monthlyInsurance: 50,
       utilityPerMonth: 350,
       maintenanceFeesPerMonth: 0,
       totalMonthlyPayment: 0,
@@ -98,7 +98,7 @@ class HouseCostCalculator extends Component {
     const houseSellingCost = sellingCostPercentage * sellingPrice / 100
     const equityMonthlyGain = Principal / (12 * holdingLength) - parseFloat(buyingCost) / (12 * holdingLength) - parseFloat(sellingCostPercentage * sellingPrice / 100) / (12 * holdingLength) + (sellingPrice - housePrice) / (12 * holdingLength);
     const realMonthlyPayment = totalMonthlyPayment - equityMonthlyGain;
-
+    const cashGainAfterSell = Principal  - parseFloat(buyingCost) - parseFloat(sellingCostPercentage * sellingPrice / 100)  + (sellingPrice - housePrice);
 
 
 
@@ -113,6 +113,7 @@ class HouseCostCalculator extends Component {
       houseSellingCost,
       sellingCostPercentage,
       taxPerYear,
+      cashGainAfterSell,
     });
   };
 
@@ -139,6 +140,7 @@ class HouseCostCalculator extends Component {
       sellingCostPercentage,
       taxPerYear,
       holdingLength,
+      cashGainAfterSell,
     } = this.state;
 
     return (
@@ -150,6 +152,24 @@ class HouseCostCalculator extends Component {
             type="number"
             name="housePrice"
             value={housePrice}
+            onChange={this.handleInputChange}
+          />
+        </div>
+        <div>
+          <label>After how many years are you planning to sell this house:</label>
+          <input
+            type="number"
+            name="holdingLength"
+            value={holdingLength}
+            onChange={this.handleInputChange}
+          />
+        </div>
+        <div>
+          <label>Selling Price:</label>
+          <input
+            type="number"
+            name="sellingPrice"
+            value={sellingPrice}
             onChange={this.handleInputChange}
           />
         </div>
@@ -208,15 +228,6 @@ class HouseCostCalculator extends Component {
           />
         </div>
         <div>
-          <label>Selling Price:</label>
-          <input
-            type="number"
-            name="sellingPrice"
-            value={sellingPrice}
-            onChange={this.handleInputChange}
-          />
-        </div>
-        <div>
           <label>Monthly Insurance:</label>
           <input
             type="number"
@@ -244,15 +255,6 @@ class HouseCostCalculator extends Component {
           />
         </div>
         <div>
-          <label>After how many years are you planning to sell this house:</label>
-          <input
-            type="number"
-            name="holdingLength"
-            value={holdingLength}
-            onChange={this.handleInputChange}
-          />
-        </div>
-        <div>
           <button onClick={this.calculateHouseCost}>Calculate</button>
         </div>
         <h4>Results:</h4>
@@ -261,6 +263,10 @@ class HouseCostCalculator extends Component {
             <tr>
               <td><b>Total Monthly Payment:</b></td>
               <td><b>{totalMonthlyPayment}</b></td>
+            </tr>
+            <tr>
+              <td><b>The cash gain after selling the house and deducting the selling cost and buying cost:</b></td>
+              <td><b>{cashGainAfterSell}</b></td>
             </tr>
             <tr>
               <td><b>Actual Total Monthly Payment (Adjusted after considering selling cost, buying cost, and equity gain):</b></td>

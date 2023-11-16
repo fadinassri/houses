@@ -5,10 +5,10 @@ class HouseCostCalculator extends Component {
     super(props);
     this.state = {
       housePrice: 350000,
-      downPayment: 100000,
-      mortgageRate: 5.4,
+      downPayment: 120000,
+      mortgageRate: 6.59,
       mortgagePeriod: 25,
-      taxPerYearPercentagre: 1.408600,
+      taxPerYearPercentagre: 1.338600,
       buyingCost: 7000,
       sellingCostPercentage: 5,
       sellingPrice: 350000,
@@ -49,12 +49,16 @@ class HouseCostCalculator extends Component {
     const totalMonths = mortgagePeriod * 12;
 
     // Calculate mortgage monthly payment
-    const mortgageMonthlyPayment =
-      (loanAmount *
-        (monthlyInterestRate * Math.pow(1 + monthlyInterestRate, totalMonths))) /
-      (Math.pow(1 + monthlyInterestRate, totalMonths) - 1);
+    // const mortgageMonthlyPayment =
+    //   (loanAmount *
+    //     (monthlyInterestRate * Math.pow(1 + monthlyInterestRate, totalMonths))) /
+    //   (Math.pow(1 + monthlyInterestRate, totalMonths) - 1);
 
-
+      const effectiveRate = Math.pow(1 + (mortgageRate/100) / 2, 2) - 1;
+      const monthlyPeriodicRate = Math.pow(1 + effectiveRate, 1 / 12) - 1;
+      const mortgageMonthlyPayment =
+        (monthlyPeriodicRate * loanAmount) /
+        (1 - Math.pow(1 + monthlyPeriodicRate, -totalMonths));
 
 
 

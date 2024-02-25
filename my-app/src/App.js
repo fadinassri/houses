@@ -4,14 +4,14 @@ class HouseCostCalculator extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      housePrice: 350000,
-      downPayment: 120000,
-      mortgageRate: 6.59,
+      housePrice: 400000,
+      downPayment: 150000,
+      mortgageRate: 5.5,
       mortgagePeriod: 25,
       taxPerYearPercentagre: 1.338600,
       buyingCost: 7000,
       sellingCostPercentage: 5,
-      sellingPrice: 350000,
+      sellingPrice: 420000,
       monthlyInsurance: 50,
       utilityPerMonth: 350,
       maintenanceFeesPerMonth: 0,
@@ -19,7 +19,7 @@ class HouseCostCalculator extends Component {
       mortgageMonthlyPayment: 0,
       otherMonthlyPayment: 0,
       equityMonthlyGain: 0,
-      holdingLength: 3,
+      holdingLength: 5,
     };
   }
 

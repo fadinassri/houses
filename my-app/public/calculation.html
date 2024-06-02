@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>House Cost Calculator Explanation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 20px;
+    }
+    h1 {
+      color: #333;
+    }
+    code {
+      background-color: #f4f4f4;
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <h1>House Cost Calculator Explanation</h1>
+  <p>This document explains how the House Cost Calculator works, including the equations used for each calculation.</p>
+
+  <h2>Mortgage Monthly Payment</h2>
+  <p>
+    The mortgage monthly payment is calculated using the formula for an amortizing loan:
+  </p>
+  <p>
+    <code>
+      M = (r * P) / (1 - (1 + r)^(-n))
+    </code>
+  </p>
+  <p>Where:</p>
+  <ul>
+    <li><b>M</b> is the monthly payment</li>
+    <li><b>P</b> is the loan amount (house price - down payment)</li>
+    <li><b>r</b> is the monthly interest rate (annual rate / 12)</li>
+    <li><b>n</b> is the total number of payments (loan period in years * 12)</li>
+  </ul>
+
+  <h2>Other Monthly Payments</h2>
+  <p>
+    Other monthly payments include taxes, insurance, utilities, and maintenance fees. This is calculated as:
+  </p>
+  <p>
+    <code>
+      OtherMonthlyPayment = (AnnualTax / 12) + MonthlyInsurance + UtilityPerMonth + MaintenanceFeesPerMonth
+    </code>
+  </p>
+
+  <h2>Total Monthly Payment</h2>
+  <p>
+    The total monthly payment is the sum of the mortgage monthly payment and other monthly payments:
+  </p>
+  <p>
+    <code>
+      TotalMonthlyPayment = MortgageMonthlyPayment + OtherMonthlyPayment
+    </code>
+  </p>
+
+  <h2>Equity Monthly Gain</h2>
+  <p>
+    Equity monthly gain is calculated as the principal paid per month adjusted for buying and selling costs, plus any increase in house value:
+  </p>
+  <p>
+    <code>
+      EquityMonthlyGain = (Principal / TotalMonths) - (BuyingCost / TotalMonths) - (SellingCost / TotalMonths) + ((SellingPrice - HousePrice) / TotalMonths)
+    </code>
+  </p>
+
+  <h2>Real Monthly Payment</h2>
+  <p>
+    The real monthly payment is the total monthly payment adjusted by the equity monthly gain:
+  </p>
+  <p>
+    <code>
+      RealMonthlyPayment = TotalMonthlyPayment - EquityMonthlyGain
+    </code>
+  </p>
+
+  <h2>Cash Gain After Sell</h2>
+  <p>
+    The cash gain after selling the house is calculated as:
+  </p>
+  <p>
+    <code>
+      CashGainAfterSell = Principal - BuyingCost - SellingCost + (SellingPrice - HousePrice)
+    </code>
+  </p>
+
+  <h2>Interest and Principal</h2>
+  <p>
+    Over the holding period, interest and principal are calculated using the remaining loan amount and monthly interest rate. For each month:
+  </p>
+  <p>
+    <code>
+      Interest = RemainingLoanAmount * MonthlyInterestRate
+    </code>
+    <br>
+    <code>
+      Principal = MortgageMonthlyPayment - Interest
+    </code>
+  </p>
+  <p>
+    The remaining loan amount decreases by the principal paid each month.
+  </p>
+</body>
+</html>

@@ -10,6 +10,8 @@
     <meta name="description" content="Estimate the monthly and overall costs of owning a house with the House Cost Calculator. Factor in mortgage details, taxes, insurance, utilities, and maintenance fees. Canadian Homeownership, Homeownership Cost Estimator, House Cost Calculator, Monthly Mortgage Estimation, Overall Homeownership Costs, Property Expenses Calculation, Real Estate Financial Planning, Housing Budget Calculator, Mortgage Details Analysis, Taxes and Insurance Calculation, Utility and Maintenance Fees, Home Investment Planning, Property Ownership Financial Tool, Residential Cost Projection, Canadian Real Estate Expenses, Housing Finance Estimation, Home Budget Management, Property Ownership Analytics, Financial Planning for Homeownership, Canada House Expenses" />
 
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
@@ -28,16 +30,29 @@
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div class="container">
+    <h1>Canadian Homeownership Cost Estimator</h1>
+    <p>
+      Our Canadian Homeownership Cost Estimator provides a clear and concise estimate of monthly and overall expenses associated with owning a house. Covering mortgage details, taxes, insurance, utilities, and maintenance fees, this calculator helps you grasp the financial implications of homeownership over a specified period. Make informed decisions with our user-friendly tool designed for Canadian homebuyers
+    </p>
+    <p>
+      For a detailed explanation of how the calculations are done, please visit our <a href="/calculation.html" target="_blank">Calculation Explanation Page</a>.
+    </p>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+    <div class="row">
+      <br />
+      <br />
+      <h2>Output Description</h2>
+      <p><b>Total Monthly Payment:</b> The total monthly amount the homeowner needs to pay, including mortgage, insurance, taxes, utilities, and maintenance fees.</p>
+      <p><b>Cash Gain After Sell:</b> The amount of cash gained after selling the house, subtracting buying and selling costs.</p>
+      <p><b>Real Monthly Payment:</b> The actual monthly payment, adjusted by considering the equity gain and other costs.</p>
+      <p><b>Mortgage Monthly Payment:</b> The monthly payment towards the mortgage loan.</p>
+      <p><b>Equity Monthly Gain:</b> The monthly equity gain, adjusted by considering buying and selling costs.</p>
+      <p><b>House Tax per Year / Month:</b> The annual and monthly property tax amounts based on the house price.</p>
+      <p><b>House Selling Cost:</b> The cost incurred when selling the house, calculated as a percentage of the selling price.</p>
+      <p><b>First Holding Years Principal:</b> The principal amount paid in the first specified years of holding the property.</p>
+      <p><b>First Holding Years Interest:</b> The interest amount paid in the first specified years of holding the property.</p>
+    </div>
+  </div>    
   </body>
 </html>

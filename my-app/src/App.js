@@ -149,10 +149,6 @@ class HouseCostCalculator extends Component {
 
     return (
       <div className="container" style={{ marginLeft: '5px' }}>
-        <h1>Canadian Homeownership Cost Estimator</h1>
-        <p>
-          Our Canadian Homeownership Cost Estimator provides a clear and concise estimate of monthly and overall expenses associated with owning a house. Covering mortgage details, taxes, insurance, utilities, and maintenance fees, this calculator helps you grasp the financial implications of homeownership over a specified period. Make informed decisions with our user-friendly tool designed for Canadian homebuyers
-        </p>
         <div>
           <label>House Price:</label><br />
           <input

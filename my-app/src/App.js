@@ -258,7 +258,17 @@ class HouseCostCalculator extends Component {
           />
         </div>
         <div style={{ padding: '10px 20px' }}>
-          <button style={{ fontSize: '18px', padding: '10px 20px' }} onClick={this.calculateHouseCost}>Calculate</button>
+          <button style={{
+            fontSize: '20px',
+            padding: '16px 32px',
+            backgroundColor: '#4CAF50', /* Green background */
+            color: 'white',
+            border: 'none',
+            borderRadius: '8px',
+            cursor: 'pointer',
+            boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)', /* Subtle shadow */
+            transition: 'background-color 0.3s ease',
+          }} onClick={this.calculateHouseCost}>Calculate</button>
         </div>
         <h4>Results:</h4>
         <div className="result-table">

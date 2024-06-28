@@ -149,124 +149,112 @@ class HouseCostCalculator extends Component {
 
     return (
       <div className="container" style={{ marginLeft: '5px' }}>
-        <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
-          <label style={{ flex: '1', margin: 2  }}>House Price:</label>
+        <div className="form-group">
+          <label>House Price:</label>
           <input
             type="number"
             name="housePrice"
             value={housePrice}
             onChange={this.handleInputChange}
-            style={{ flex: '2' }}
           />
         </div>
-        <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
-          <label style={{ flex: '1', margin: 2 }}>After how many years are you planning to sell this house:</label>
+        <div className="form-group">
+          <label>After how many years are you planning to sell this house:</label>
           <input
             type="number"
             name="holdingLength"
             value={holdingLength}
             onChange={this.handleInputChange}
-            style={{ flex: '2' }}
           />
         </div>
-        <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
-          <label style={{ flex: '1' , margin: 2 }}>Selling Price:</label>
+        <div className="form-group">
+          <label>Selling Price:</label>
           <input
             type="number"
             name="sellingPrice"
             value={sellingPrice}
             onChange={this.handleInputChange}
-            style={{ flex: '2' }}
           />
         </div>
-        <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
-          <label style={{ flex: '1', margin: 2  }}>Down Payment:</label>
+        <div className="form-group">
+          <label>Down Payment:</label>
           <input
             type="number"
             name="downPayment"
             value={downPayment}
             onChange={this.handleInputChange}
-            style={{ flex: '2' }}
           />
         </div>
-        <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
-          <label style={{ flex: '1', margin: 2  }}>Mortgage Rate (%):</label>
+        <div className="form-group">
+          <label>Mortgage Rate (%):</label>
           <input
             type="number"
             name="mortgageRate"
             value={mortgageRate}
             onChange={this.handleInputChange}
-            style={{ flex: '2' }}
           />
         </div>
-        <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
-          <label style={{ flex: '1', margin: 2  }}>Mortgage Period (years):</label>
+        <div className="form-group">
+          <label>Mortgage Period (years):</label>
           <input
             type="number"
             name="mortgagePeriod"
             value={mortgagePeriod}
             onChange={this.handleInputChange}
-            style={{ flex: '2' }}
           />
         </div>
-        <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
-          <label style={{ flex: '1' , margin: 2 }}>Tax per Year (Percentage of buying Price %):</label>
+        <div className="form-group">
+          <label>Tax per Year (Percentage of buying Price %):</label>
           <input
             type="number"
             name="taxPerYearPercentagre"
             value={taxPerYearPercentagre}
             onChange={this.handleInputChange}
-            style={{ flex: '2' }}
           />
         </div>
-        <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
-          <label style={{ flex: '1' , margin: 2 }}>Buying Cost:</label>
+        <div className="form-group">
+          <label>Buying Cost:</label>
           <input
             type="number"
             name="buyingCost"
             value={buyingCost}
             onChange={this.handleInputChange}
-            style={{ flex: '2' }}
           />
         </div>
-        <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
-          <label style={{ flex: '1', margin: 2 }}>Selling Cost Percentage (% of Selling Price):</label>
+        <div className="form-group">
+          <label>Selling Cost Percentage (% of Selling Price):</label>
           <input
             type="number"
             name="sellingCostPercentage"
             value={sellingCostPercentage}
             onChange={this.handleInputChange}
-            style={{ flex: '2' }}
           />
         </div>
-        <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
-          <label style={{ flex: '1' , margin: 2 }}>Monthly Insurance:</label>
+        <div className="form-group">
+          <label>Monthly Insurance:</label>
           <input
             type="number"
             name="monthlyInsurance"
             value={monthlyInsurance}
             onChange={this.handleInputChange}
-            style={{ flex: '2' }}
           />
         </div>
-        <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
-          <label style={{ flex: '1' , margin: 2 }}>Utility per Month:</label>
+        <div className="form-group">
+          <label>Utility per Month:</label>
           <input
             type="number"
             name="utilityPerMonth"
             value={utilityPerMonth}
             onChange={this.handleInputChange}
-            style={{ flex: '2' }}
           />
         </div>
-        <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
-          <label style={{ flex: '1', margin: 2  }}>Maintenance Fees per Month:</label>
+        <div className="form-group">
+          <label>Maintenance Fees per Month:</label>
           <input
             type="number"
             name="maintenanceFeesPerMonth"
             value={maintenanceFeesPerMonth}
             onChange={this.handleInputChange}
-            style={{ flex: '2' }}
           />
         </div>
         <div style={{ padding: '10px 20px' }}>

@@ -16,7 +16,79 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
   <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f8f9fa;
+      color: #343a40;
+    }
 
+    .container {
+      margin-top: 20px;
+    }
+
+    h1, h2 {
+      color: #ce4047;
+    }
+
+    a {
+      color: #007bff;
+    }
+
+    a:hover {
+      text-decoration: none;
+      color: #0056b3;
+    }
+
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    nav ul li {
+      margin-bottom: 10px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    p, li {
+      line-height: 1.6;
+    }
+
+    header {
+      margin-bottom: 20px;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    ol {
+      padding-left: 20px;
+    }
+
+    ol ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+
+    .highlight {
+      background-color: #e9ecef;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .footer {
+      margin-top: 40px;
+      padding: 20px 0;
+      background-color: #343a40;
+      color: #ffffff;
+      text-align: center;
+    }
+  </style>
   <title>Canadian Homeownership Cost Estimator</title>
 </head>
 
@@ -29,46 +101,43 @@
         href="/calculation.html">Calculation Explanation Page</a>.
     </p>
     <div id="root"></div>
-    <div>
-      <br />
+    <div class="highlight">
       <p>
         Our Canadian Homeownership Cost Estimator provides a clear and concise estimate of monthly and overall expenses
         associated with owning a house. Covering mortgage details, taxes, insurance, utilities, and maintenance fees, this
         calculator helps you grasp the financial implications of homeownership over a specified period. Make informed
-        decisions with our user-friendly tool designed for Canadian homebuyers
+        decisions with our user-friendly tool designed for Canadian homebuyers.
       </p>
-      <br />
-      <h2>Output Description</h2>
-      <p><b>Total Monthly Payment:</b> The total monthly amount the homeowner needs to pay, including mortgage,
-        insurance, taxes, utilities, and maintenance fees.</p>
-      <p><b>Cash Gain After Sell:</b> The amount of cash gained after selling the house, subtracting buying and selling
-        costs.</p>
-      <p><b>Real Monthly Payment:</b> The actual monthly payment, adjusted by considering the equity gain and other
-        costs.</p>
-      <p><b>Mortgage Monthly Payment:</b> The monthly payment towards the mortgage loan.</p>
-      <p><b>Equity Monthly Gain:</b> The monthly equity gain, adjusted by considering buying and selling costs.</p>
-      <p><b>House Tax per Year / Month:</b> The annual and monthly property tax amounts based on the house price.</p>
-      <p><b>House Selling Cost:</b> The cost incurred when selling the house, calculated as a percentage of the selling
-        price.</p>
-      <p><b>First Holding Years Principal:</b> The principal amount paid in the first specified years of holding the
-        property.</p>
-      <p><b>First Holding Years Interest:</b> The interest amount paid in the first specified years of holding the
-        property.</p>
     </div>
-    <div>
-      <header>
-        <h1>Steps to Buy a House in Canada</h1>
-        <nav>
-          <ul>
-            <li><a href="#finding-house">Finding a House and Submitting an Offer</a></li>
-            <li><a href="#after-accepting">Steps After Accepting Your Offer</a></li>
-            <li><a href="#getting-mortgage">Steps to Get a Good Mortgage in Canada</a></li>
-          </ul>
-        </nav>
-      </header>
-      <section id="finding-house"></section>
+    <br />
+    <h2>Output Description</h2>
+    <p><b>Total Monthly Payment:</b> The total monthly amount the homeowner needs to pay, including mortgage,
+      insurance, taxes, utilities, and maintenance fees.</p>
+    <p><b>Cash Gain After Sell:</b> The amount of cash gained after selling the house, subtracting buying and selling
+      costs.</p>
+    <p><b>Real Monthly Payment:</b> The actual monthly payment, adjusted by considering the equity gain and other
+      costs.</p>
+    <p><b>Mortgage Monthly Payment:</b> The monthly payment towards the mortgage loan.</p>
+    <p><b>Equity Monthly Gain:</b> The monthly equity gain, adjusted by considering buying and selling costs.</p>
+    <p><b>House Tax per Year / Month:</b> The annual and monthly property tax amounts based on the house price.</p>
+    <p><b>House Selling Cost:</b> The cost incurred when selling the house, calculated as a percentage of the selling
+      price.</p>
+    <p><b>First Holding Years Principal:</b> The principal amount paid in the first specified years of holding the
+      property.</p>
+    <p><b>First Holding Years Interest:</b> The interest amount paid in the first specified years of holding the
+      property.</p>
+    <header>
+      <h1>Steps to Buy a House in Canada</h1>
+      <nav>
+        <ul>
+          <li><a href="#finding-house">Finding a House and Submitting an Offer</a></li>
+          <li><a href="#after-accepting">Steps After Accepting Your Offer</a></li>
+          <li><a href="#getting-mortgage">Steps to Get a Good Mortgage in Canada</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section id="finding-house">
       <h2>Section 1: Finding a House and Submitting an Offer</h2>
-
       <ol>
         <li><strong>Determine Your Budget and Get Pre-approved:</strong><br>
           <ul>
@@ -78,7 +147,6 @@
               you find a house.</li>
           </ul>
         </li>
-
         <li><strong>Hire a Real Estate Agent:</strong><br>
           <ul>
             <li>Find a licensed real estate agent who specializes in the area where you want to buy.</li>
@@ -86,7 +154,6 @@
               the process.</li>
           </ul>
         </li>
-
         <li><strong>Search for Properties:</strong><br>
           <ul>
             <li>Work with your agent to search for properties that meet your criteria (location, size, amenities,
@@ -94,7 +161,6 @@
             <li>Attend open houses and private viewings to inspect the properties you're interested in.</li>
           </ul>
         </li>
-
         <li><strong>Conduct Due Diligence:</strong><br>
           <ul>
             <li>Research the neighborhood, including amenities, schools, transportation, and future development plans.
@@ -103,7 +169,6 @@
               structural problems, liens).</li>
           </ul>
         </li>
-
         <li><strong>Submit an Offer:</strong><br>
           <ul>
             <li>Work with your agent to draft a written offer that includes your proposed purchase price, deposit
@@ -111,14 +176,12 @@
             <li>Your agent will present the offer to the seller's agent, who will communicate it to the seller.</li>
           </ul>
         </li>
-
         <li><strong>Negotiate Terms:</strong><br>
           <ul>
             <li>Negotiate with the seller until both parties agree on the terms of the sale.</li>
             <li>Be prepared for counter-offers and negotiate on price, conditions, or other terms as needed.</li>
           </ul>
         </li>
-
         <li><strong>Acceptance of Offer:</strong><br>
           <ul>
             <li>Once both parties agree on the terms and conditions, and the offer is signed by both buyer and seller,
@@ -126,133 +189,118 @@
           </ul>
         </li>
       </ol>
-
-      <section id="after-accepting">
-        <h2>Section 2: Steps After Accepting Your Offer</h2>
-
-        <ol>
-          <li><strong>Fulfill Conditions:</strong><br>
-            <ul>
-              <li>Complete any conditions outlined in the offer, such as arranging financing, conducting a home
-                inspection, or reviewing condominium documents (if applicable).</li>
-              <li>If conditions are not met satisfactorily, you may renegotiate or withdraw your offer.</li>
-            </ul>
-          </li>
-
-          <li><strong>Secure Financing:</strong><br>
-            <ul>
-              <li>Finalize your mortgage financing with your lender, providing all required documentation.</li>
-              <li>Your lender may require an appraisal to confirm the property's value.</li>
-            </ul>
-          </li>
-
-          <li><strong>Review and Sign Documents:</strong><br>
-            <ul>
-              <li>Review the purchase agreement and related documents with your real estate lawyer.</li>
-              <li>Sign the necessary documents, including the purchase agreement, mortgage documents, and any legal
-                disclosures.</li>
-            </ul>
-          </li>
-
-          <li><strong>Arrange for Insurance:</strong><br>
-            <ul>
-              <li>Secure home insurance for your new property, providing proof to your lender before closing.</li>
-            </ul>
-          </li>
-
-          <li><strong>Complete the Closing Process:</strong><br>
-            <ul>
-              <li>Transfer the deposit amount to the seller or their representative.</li>
-              <li>Your lawyer or notary will register the property in your name and transfer funds to the seller's
-                lawyer
-                or notary.</li>
-            </ul>
-          </li>
-
-          <li><strong>Final Walkthrough:</strong><br>
-            <ul>
-              <li>Conduct a final walkthrough of the property to ensure it's in the agreed condition before closing.
-              </li>
-            </ul>
-          </li>
-
-          <li><strong>Close the Deal:</strong><br>
-            <ul>
-              <li>On the closing day, your lawyer or notary will transfer the remaining funds to the seller's lawyer or
-                notary, and you'll receive the keys to your new home.</li>
-            </ul>
-          </li>
-
-          <li><strong>Register the Property:</strong><br>
-            <ul>
-              <li>Your lawyer or notary will register the property under your name with the appropriate land registry
-                office.</li>
-            </ul>
-          </li>
-
-          <li><strong>Move In:</strong><br>
-            <ul>
-              <li>Arrange for moving logistics, utilities transfer, and any necessary renovations or repairs.</li>
-            </ul>
-          </li>
-        </ol>
-
-        <section id="getting-mortgage"></section>
-        <h2>Steps to Get a Good Mortgage in Canada</h2>
-
-        <ol>
-          <li><strong>Check Your Credit Score:</strong><br>
-            <ul>
-              <li>Review your credit report to ensure it's accurate and in good standing.</li>
-              <li>Take steps to improve your credit score if necessary.</li>
-            </ul>
-          </li>
-
-          <li><strong>Calculate Affordability:</strong><br>
-            <ul>
-              <li>Assess your financial situation to determine how much you can afford to borrow.</li>
-              <li>Consider factors such as your income, debts, expenses, and down payment.</li>
-            </ul>
-          </li>
-
-          <li><strong>Compare Mortgage Options:</strong><br>
-            <ul>
-              <li>Research different mortgage lenders, including banks, credit unions, and mortgage brokers.</li>
-              <li>Compare interest rates, terms, and features to find the best mortgage for your needs.</li>
-            </ul>
-          </li>
-
-          <li><strong>Get Pre-approved:</strong><br>
-            <ul>
-              <li>Apply for mortgage pre-approval to obtain a conditional commitment from a lender.</li>
-              <li>Pre-approval demonstrates your serious intent to buy and can strengthen your offer.</li>
-            </ul>
-          </li>
-
-          <li><strong>Provide Documentation:</strong><br>
-            <ul>
-              <li>Submit required documents such as proof of income, employment verification, and asset statements.</li>
-              <li>Be prepared to provide additional documentation as requested by the lender.</li>
-            </ul>
-          </li>
-
-          <li><strong>Negotiate Terms:</strong><br>
-            <ul>
-              <li>Review the mortgage terms and conditions carefully.</li>
-              <li>Negotiate with the lender to secure favorable terms, including interest rates and repayment options.
-              </li>
-            </ul>
-          </li>
-
-          <li><strong>Finalize Mortgage Approval:</strong><br>
-            <ul>
-              <li>Once approved, review the final mortgage offer from the lender.</li>
-              <li>Understand all terms and conditions before signing the mortgage documents.</li>
-            </ul>
-          </li>
-        </ol>
-
-    </div>
+    </section>
+    <section id="after-accepting">
+      <h2>Section 2: Steps After Accepting Your Offer</h2>
+      <ol>
+        <li><strong>Fulfill Conditions:</strong><br>
+          <ul>
+            <li>Complete any conditions outlined in the offer, such as arranging financing, conducting a home
+              inspection, or reviewing condominium documents (if applicable).</li>
+            <li>If conditions are not met satisfactorily, you may renegotiate or withdraw your offer.</li>
+          </ul>
+        </li>
+        <li><strong>Secure Financing:</strong><br>
+          <ul>
+            <li>Finalize your mortgage financing with your lender, providing all required documentation.</li>
+            <li>Your lender may require an appraisal to confirm the property's value.</li>
+          </ul>
+        </li>
+        <li><strong>Review and Sign Documents:</strong><br>
+          <ul>
+            <li>Review the purchase agreement and related documents with your real estate lawyer.</li>
+            <li>Sign the necessary documents, including the purchase agreement, mortgage documents, and any legal
+              disclosures.</li>
+          </ul>
+        </li>
+        <li><strong>Arrange for Insurance:</strong><br>
+          <ul>
+            <li>Secure home insurance for your new property, providing proof to your lender before closing.</li>
+          </ul>
+        </li>
+        <li><strong>Complete the Closing Process:</strong><br>
+          <ul>
+            <li>Transfer the deposit amount to the seller or their representative.</li>
+            <li>Your lawyer or notary will register the property in your name and transfer funds to the seller's
+              lawyer or notary.</li>
+          </ul>
+        </li>
+        <li><strong>Final Walkthrough:</strong><br>
+          <ul>
+            <li>Conduct a final walkthrough of the property to ensure it's in the agreed condition before closing.
+            </li>
+          </ul>
+        </li>
+        <li><strong>Close the Deal:</strong><br>
+          <ul>
+            <li>On the closing day, your lawyer or notary will transfer the remaining funds to the seller's lawyer or
+              notary, and you'll receive the keys to your new home.</li>
+          </ul>
+        </li>
+        <li><strong>Register the Property:</strong><br>
+          <ul>
+            <li>Your lawyer or notary will register the property under your name with the appropriate land registry
+              office.</li>
+          </ul>
+        </li>
+        <li><strong>Move In:</strong><br>
+          <ul>
+            <li>Arrange for moving logistics, utilities transfer, and any necessary renovations or repairs.</li>
+          </ul>
+        </li>
+      </ol>
+    </section>
+    <section id="getting-mortgage">
+      <h2>Steps to Get a Good Mortgage in Canada</h2>
+      <ol>
+        <li><strong>Check Your Credit Score:</strong><br>
+          <ul>
+            <li>Review your credit report to ensure it's accurate and in good standing.</li>
+            <li>Take steps to improve your credit score if necessary.</li>
+          </ul>
+        </li>
+        <li><strong>Calculate Affordability:</strong><br>
+          <ul>
+            <li>Assess your financial situation to determine how much you can afford to borrow.</li>
+            <li>Consider factors such as your income, debts, expenses, and down payment.</li>
+          </ul>
+        </li>
+        <li><strong>Compare Mortgage Options:</strong><br>
+          <ul>
+            <li>Research different mortgage lenders, including banks, credit unions, and mortgage brokers.</li>
+            <li>Compare interest rates, terms, and features to find the best mortgage for your needs.</li>
+          </ul>
+        </li>
+        <li><strong>Get Pre-approved:</strong><br>
+          <ul>
+            <li>Apply for mortgage pre-approval to obtain a conditional commitment from a lender.</li>
+            <li>Pre-approval demonstrates your serious intent to buy and can strengthen your offer.</li>
+          </ul>
+        </li>
+        <li><strong>Provide Documentation:</strong><br>
+          <ul>
+            <li>Submit required documents such as proof of income, employment verification, and asset statements.</li>
+            <li>Be prepared to provide additional documentation as requested by the lender.</li>
+          </ul>
+        </li>
+        <li><strong>Negotiate Terms:</strong><br>
+          <ul>
+            <li>Review the mortgage terms and conditions carefully.</li>
+            <li>Negotiate with the lender to secure favorable terms, including interest rates and repayment options.
+            </li>
+          </ul>
+        </li>
+        <li><strong>Finalize Mortgage Approval:</strong><br>
+          <ul>
+            <li>Once approved, review the final mortgage offer from the lender.</li>
+            <li>Understand all terms and conditions before signing the mortgage documents.</li>
+          </ul>
+        </li>
+      </ol>
+    </section>
+  </div>
+  <div class="footer">
+    &copy; 2024 Canadian Homeownership Cost Estimator
   </div>
 </body>
 

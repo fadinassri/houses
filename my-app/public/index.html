@@ -18,30 +18,42 @@
   <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
   <style>
     body {
-      font-family: 'Arial', sans-serif;
-      background-color: #f8f9fa;
-      color: #343a40;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      background-color: #f0f2f5;
+      color: #333;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
     }
 
     .container {
-      margin-top: 20px;
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 
-    h1, h2 {
-      color: #ce4047;
+    h1,
+    h2 {
+      color: #992b39;
+      margin-bottom: 20px;
     }
 
     a {
       color: #007bff;
+      text-decoration: none;
+      transition: color 0.3s;
     }
 
     a:hover {
-      text-decoration: none;
       color: #0056b3;
+      text-decoration: underline;
     }
 
     nav ul {
-      list-style-type: none;
+      list-style: none;
       padding: 0;
     }
 
@@ -50,16 +62,16 @@
     }
 
     nav ul li a {
-      text-decoration: none;
       font-weight: bold;
     }
 
-    p, li {
-      line-height: 1.6;
+    p,
+    li {
+      margin-bottom: 10px;
     }
 
     header {
-      margin-bottom: 20px;
+      margin-bottom: 40px;
     }
 
     section {
@@ -68,25 +80,41 @@
 
     ol {
       padding-left: 20px;
+      margin: 0;
     }
 
     ol ul {
       list-style-type: disc;
       padding-left: 20px;
+      margin: 10px 0;
     }
 
     .highlight {
       background-color: #e9ecef;
-      padding: 10px;
+      padding: 15px;
+      border-left: 5px solid #007bff;
       border-radius: 5px;
     }
 
     .footer {
       margin-top: 40px;
-      padding: 20px 0;
-      background-color: #343a40;
-      color: #ffffff;
+      padding: 20px;
+      background-color: #272829;
+      color: #fff;
       text-align: center;
+      border-radius: 0 0 8px 8px;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        margin: 10px;
+        padding: 10px;
+      }
+
+      h1,
+      h2 {
+        font-size: 1.5em;
+      }
     }
   </style>
   <title>Canadian Homeownership Cost Estimator</title>
@@ -104,7 +132,8 @@
     <div class="highlight">
       <p>
         Our Canadian Homeownership Cost Estimator provides a clear and concise estimate of monthly and overall expenses
-        associated with owning a house. Covering mortgage details, taxes, insurance, utilities, and maintenance fees, this
+        associated with owning a house. Covering mortgage details, taxes, insurance, utilities, and maintenance fees,
+        this
         calculator helps you grasp the financial implications of homeownership over a specified period. Make informed
         decisions with our user-friendly tool designed for Canadian homebuyers.
       </p>

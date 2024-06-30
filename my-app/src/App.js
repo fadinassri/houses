@@ -23,6 +23,10 @@ class HouseCostCalculator extends Component {
     };
   }
 
+  componentDidMount() {
+    this.calculateHouseCost();
+  }
+
   handleInputChange = (event) => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
@@ -266,39 +270,39 @@ class HouseCostCalculator extends Component {
             <tbody>
               <tr>
                 <td><b>Total Monthly Payment:</b></td>
-                <td><b>{totalMonthlyPayment}</b></td>
+                <td><b>{totalMonthlyPayment?.toFixed(3)}</b></td>
               </tr>
               <tr>
                 <td><b>The cash gain after selling the house and deducting the selling cost and buying cost:</b></td>
-                <td><b>{cashGainAfterSell}</b></td>
+                <td><b>{cashGainAfterSell?.toFixed(3)}</b></td>
               </tr>
               <tr>
                 <td><b>Actual Total Monthly Payment (Adjusted after considering selling cost, buying cost, and equity gain):</b></td>
-                <td><b>{realMonthlyPayment}</b></td>
+                <td><b>{realMonthlyPayment?.toFixed(3)}</b></td>
               </tr>
               <tr>
                 <td>Mortgage Monthly Payment:</td>
-                <td>{mortgageMonthlyPayment}</td>
+                <td>{mortgageMonthlyPayment?.toFixed(3)}</td>
               </tr>
               <tr>
                 <td>Equity Monthly (Adjusted after considering buying cost and selling cost):</td>
-                <td>{equityMonthlyGain}</td>
+                <td>{equityMonthlyGain?.toFixed(3)}</td>
               </tr>
               <tr>
                 <td>House Tax per year / month:</td>
-                <td>{taxPerYear} / {taxPerYear / 12}</td>
+                <td>{taxPerYear?.toFixed(3)} / {(taxPerYear?.toFixed(3) / 12)}</td>
               </tr>
               <tr>
                 <td>House Selling Cost:</td>
-                <td>{houseSellingCost}</td>
+                <td>{houseSellingCost?.toFixed(3)}</td>
               </tr>
               <tr>
                 <td>First {holdingLength} Years Principal:</td>
-                <td>{Principal}</td>
+                <td>{Principal?.toFixed(3)}</td>
               </tr>
               <tr>
                 <td>First {holdingLength} Years Interest:</td>
-                <td>{Interest}</td>
+                <td>{Interest?.toFixed(3)}</td>
               </tr>
             </tbody>
           </table>

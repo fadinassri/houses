@@ -163,7 +163,7 @@ class HouseCostCalculator extends Component {
           />
         </div>
         <div className="form-group">
-          <label>After how many years are you planning to sell this house:</label>
+          <label title="Enter the number of years you plan to hold the house before selling it.">Years until sale:</label>
           <input
             type="number"
             name="holdingLength"
@@ -207,8 +207,8 @@ class HouseCostCalculator extends Component {
             onChange={this.handleInputChange}
           />
         </div>
-        <div className="form-group">
-          <label>Tax per Year (Percentage of buying Price %):</label>
+        <div className="form-group" title="Enter the annual property tax as a percentage of the buying price.">
+          <label>Annual Property Tax (% of Price):</label>
           <input
             type="number"
             name="taxPerYearPercentagre"
@@ -225,8 +225,8 @@ class HouseCostCalculator extends Component {
             onChange={this.handleInputChange}
           />
         </div>
-        <div className="form-group">
-          <label>Selling Cost Percentage (% of Selling Price):</label>
+        <div className="form-group" title="Enter the percentage of the selling price that will be incurred as selling costs.">
+          <label>Selling Costs (% of Price):</label>
           <input
             type="number"
             name="sellingCostPercentage"

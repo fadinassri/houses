@@ -163,24 +163,6 @@ class HouseCostCalculator extends Component {
           />
         </div>
         <div className="form-group">
-          <label title="Enter the number of years you plan to hold the house before selling it.">Years until sale:</label>
-          <input
-            type="number"
-            name="holdingLength"
-            value={holdingLength}
-            onChange={this.handleInputChange}
-          />
-        </div>
-        <div className="form-group">
-          <label>Selling Price:</label>
-          <input
-            type="number"
-            name="sellingPrice"
-            value={sellingPrice}
-            onChange={this.handleInputChange}
-          />
-        </div>
-        <div className="form-group">
           <label>Down Payment:</label>
           <input
             type="number"
@@ -225,15 +207,6 @@ class HouseCostCalculator extends Component {
             onChange={this.handleInputChange}
           />
         </div>
-        <div className="form-group" title="Enter the percentage of the selling price that will be incurred as selling costs.">
-          <label>Selling Costs (% of Price):</label>
-          <input
-            type="number"
-            name="sellingCostPercentage"
-            value={sellingCostPercentage}
-            onChange={this.handleInputChange}
-          />
-        </div>
         <div className="form-group">
           <label>Monthly Insurance:</label>
           <input
@@ -258,6 +231,33 @@ class HouseCostCalculator extends Component {
             type="number"
             name="maintenanceFeesPerMonth"
             value={maintenanceFeesPerMonth}
+            onChange={this.handleInputChange}
+          />
+        </div>
+        <div className="form-group">
+          <label title="Enter the number of years you plan to hold the house before selling it.">Years until sale:</label>
+          <input
+            type="number"
+            name="holdingLength"
+            value={holdingLength}
+            onChange={this.handleInputChange}
+          />
+        </div>
+        <div className="form-group">
+          <label>Selling Price:</label>
+          <input
+            type="number"
+            name="sellingPrice"
+            value={sellingPrice}
+            onChange={this.handleInputChange}
+          />
+        </div>
+        <div className="form-group" title="Enter the percentage of the selling price that will be incurred as selling costs.">
+          <label>Selling Costs (% of Price):</label>
+          <input
+            type="number"
+            name="sellingCostPercentage"
+            value={sellingCostPercentage}
             onChange={this.handleInputChange}
           />
         </div>

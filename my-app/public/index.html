@@ -19,33 +19,40 @@
 
   <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
   <title>Canadian Homeownership Cost Estimator</title>
+
+  <style>
+    .output-description {
+      background-color: #f8e3ca;
+      padding: 15px;
+      display: none;
+    }
+  </style>
+  <script>
+    function toggleDescription() {
+      var description = document.querySelector('.output-description');
+      if (description.style.display === 'none' || description.style.display === '') {
+        description.style.display = 'block';
+      } else {
+        description.style.display = 'none';
+      }
+    }
+  </script>
+
 </head>
 
 <body>
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <div class="container">
     <h1>Canadian Homeownership Cost Estimator</h1>
+
+    <div id="root"></div>
+    <br>
     <p>
       For a detailed explanation of how the calculations are done, please visit our <a
-        href="/calculation.html">Calculation Explanation Page</a>.
+        href="/calculation.html">Calculation Explanation Page</a>. For output description, <a href="javascript:void(0);"
+        onclick="toggleDescription()">click here</a>.
     </p>
-    <div id="root"></div>
-    <br />
-    <div class="highlight">
-      <p>
-        Our Canadian Homeownership Cost Calculator, also known as our True Cost of Homeownership Calculator, delivers a
-        clear and concise monthly and overall homeownership cost estimate. This house cost calculator factors in various
-        expenses, including mortgage details, property taxes and insurance, monthly utility costs, and anticipated
-        maintenance fees. By utilizing this home ownership expense calculator, you'll gain valuable insights into the
-        true cost of owning a home over a specified timeframe. Our Canadian real estate expenses calculator empowers you
-        to make informed decisions as you navigate homeownership financial planning. This user-friendly tool is designed
-        specifically for Canadian homebuyers to manage their housing budget and understand property ownership analytics.
-        Ultimately, this residential cost projection tool provides a comprehensive picture of Canadian homeownership
-        costs, aiding you in financial planning for homeownership.
-      </p>
-    </div>
-    <br />
-    <div>
+    <div class="output-description">
       <h2>Output Description</h2>
       <p><b>Total Monthly Payment:</b> The total monthly amount the homeowner needs to pay, including mortgage,
         insurance, taxes, utilities, and maintenance fees.</p>
@@ -63,6 +70,35 @@
       <p><b>First Holding Years Interest:</b> The interest amount paid in the first specified years of holding the
         property.</p>
     </div>
+
+    <div class="highlight">
+
+      <h2>True Cost of Homeownership: Unveiling the Full Financial Picture (Canadian Focus)</h2>
+
+      <p>This innovative Canadian Homeownership Cost Calculator goes beyond basic monthly mortgage estimates. It
+        tackles the challenge of providing a comprehensive picture of homeownership costs, including buying and
+        selling expenses, that most traditional calculators neglect.</p>
+
+      <h3>What Sets Our Tool Apart:</h3>
+
+      <ul>
+        <li><strong>Unveils the True Monthly Cost:</strong> We factor in selling costs, buying costs, and equity
+          gain, resulting in a more realistic "Actual Total Monthly Payment". This provides a clearer
+          understanding of the true ongoing financial commitment.</li>
+        <li><strong>Detailed Breakdown:</strong> Our tool delivers a granular breakdown of expenses like monthly
+          mortgage payments, property taxes, house insurance, utilities, and maintenance.</li>
+        <li><strong>Long-Term Perspective:</strong> We project future equity growth and show how it offsets some
+          ownership costs.</li>
+        <li><strong>Canadian Specific:</strong> This tool is tailored to the Canadian housing market, considering
+          factors like Canadian property taxes and selling costs.</li>
+      </ul>
+
+      <p>The result? You gain a comprehensive understanding of Canadian homeownership costs over time,
+        empowering you to make informed financial decisions when buying a home.</p>
+
+      <br>
+    </div>
+
     <header>
       <h1>Steps to Buy a House in Canada</h1>
       <nav>

@@ -20,6 +20,10 @@ class HouseCostCalculator extends Component {
       otherMonthlyPayment: 0,
       equityMonthlyGain: 0,
       holdingLength: 5,
+      income: 6000, // Optional input for monthly income
+      otherMonthlyDebts: 250, // Optional input for other monthly debts
+      dtiRatio: 0, // Debt-to-Income ratio
+      remainingIncome: 0, // Remaining monthly income
     };
   }
 
@@ -46,6 +50,8 @@ class HouseCostCalculator extends Component {
       utilityPerMonth,
       maintenanceFeesPerMonth,
       holdingLength,
+      income,
+      otherMonthlyDebts,
     } = this.state;
 
     const loanAmount = housePrice - downPayment;
@@ -100,15 +106,16 @@ class HouseCostCalculator extends Component {
     Principal = loanAmount - remainingLoanAmount;
     Interest = mortgageMonthlyPayment * (12 * holdingLength) - Principal;
 
-
-
     // Calculate equity monthly gain
-    const houseSellingCost = sellingCostPercentage * sellingPrice / 100
+    const houseSellingCost = sellingCostPercentage * sellingPrice / 100;
     const equityMonthlyGain = Principal / (12 * holdingLength) - parseFloat(buyingCost) / (12 * holdingLength) - parseFloat(sellingCostPercentage * sellingPrice / 100) / (12 * holdingLength) + (sellingPrice - housePrice) / (12 * holdingLength);
     const realMonthlyPayment = totalMonthlyPayment - equityMonthlyGain;
     const cashGainAfterSell = Principal - parseFloat(buyingCost) - parseFloat(sellingCostPercentage * sellingPrice / 100) + (sellingPrice - housePrice);
 
-
+    // Calculate DTI ratio and remaining income
+    const totalDebt = parseFloat(totalMonthlyPayment) + parseFloat(otherMonthlyDebts);
+    const dtiRatio = (income > 0) ? (totalDebt / income) * 100 : 0;
+    const remainingIncome = (income > 0) ? income - totalDebt : 0;
 
     this.setState({
       totalMonthlyPayment,
@@ -122,6 +129,8 @@ class HouseCostCalculator extends Component {
       sellingCostPercentage,
       taxPerYear,
       cashGainAfterSell,
+      dtiRatio,
+      remainingIncome,
     });
   };
 
@@ -149,6 +158,10 @@ class HouseCostCalculator extends Component {
       taxPerYear,
       holdingLength,
       cashGainAfterSell,
+      income,
+      otherMonthlyDebts,
+      dtiRatio,
+      remainingIncome,
     } = this.state;
 
     return (
@@ -261,6 +274,24 @@ class HouseCostCalculator extends Component {
             onChange={this.handleInputChange}
           />
         </div>
+        <div className="form-group">
+          <label>Monthly Income (Optional):</label>
+          <input
+            type="number"
+            name="income"
+            value={income}
+            onChange={this.handleInputChange}
+          />
+        </div>
+        <div className="form-group">
+          <label>Other Monthly Debts (Optional):</label>
+          <input
+            type="number"
+            name="otherMonthlyDebts"
+            value={otherMonthlyDebts}
+            onChange={this.handleInputChange}
+          />
+        </div>
         <div style={{ padding: '10px 20px' }}>
           <button className='button' onClick={this.calculateHouseCost}>Calculate</button>
         </div>
@@ -290,7 +321,7 @@ class HouseCostCalculator extends Component {
               </tr>
               <tr>
                 <td>House Tax per year / month:</td>
-                <td>{taxPerYear?.toFixed(3)} / {(taxPerYear?.toFixed(3) / 12)}</td>
+                <td>{taxPerYear?.toFixed(3)} / {(taxPerYear?.toFixed(3) / 12).toFixed(3)}</td>
               </tr>
               <tr>
                 <td>House Selling Cost:</td>
@@ -307,6 +338,26 @@ class HouseCostCalculator extends Component {
             </tbody>
           </table>
         </div>
+        {income > 0 && (
+          <div>
+            <br />
+            <h3 style={{color:'red'}}>Debt-to-Income Ratio and Remaining Income</h3>
+            <div className="result-table">
+              <table border={1}>
+                <tbody>
+                  <tr>
+                    <td><b>Debt-to-Income Ratio (%):</b></td>
+                    <td><b>{dtiRatio?.toFixed(2)}%</b></td>
+                  </tr>
+                  <tr>
+                    <td><b>Remaining Monthly Income:</b></td>
+                    <td><b>{remainingIncome?.toFixed(3)}</b></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        )}
       </div>
     );
   }

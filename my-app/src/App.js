@@ -33,7 +33,7 @@ class HouseCostCalculator extends Component {
 
   handleInputChange = (event) => {
     const { name, value } = event.target;
-    this.setState({ [name]: value });
+    this.setState({ [name]: value }, this.calculateHouseCost);
   };
 
   calculateHouseCost = () => {
@@ -292,9 +292,9 @@ class HouseCostCalculator extends Component {
             onChange={this.handleInputChange}
           />
         </div>
-        <div style={{ padding: '10px 20px' }}>
+        {/* <div style={{ padding: '10px 20px' }}>
           <button className='button' onClick={this.calculateHouseCost}>Calculate</button>
-        </div>
+        </div> */}
         <h4>Results:</h4>
         <div className="result-table">
           <table border={1}>
